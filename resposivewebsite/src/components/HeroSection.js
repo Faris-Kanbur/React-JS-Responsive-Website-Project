@@ -6,8 +6,8 @@ import './HeroSection.css';
 const HeroSection = () => {
     return (
         <div className="hero-container">
-            <video src="/video/video-2.mp4" autoPlay loop muted />
-            <h1>ADVENTURE AWAITS</h1>
+            <video src="/videos/video-2.mp4" autoPlay loop muted />
+            <h1>Learn Language </h1>
             <p>What are you waiting for?</p>
             <div className="hero-btns">
                 <Button
@@ -20,7 +20,7 @@ const HeroSection = () => {
                     className="btns"
                     buttonStyle="btn--primary"
                     buttonSize="btn--large"
-                    >See How It Works
+                    >See How We Work 
                     <i className="far fa-play-circle" />
                 </Button>
 
