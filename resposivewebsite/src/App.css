@@ -3,12 +3,14 @@
   margin: 0;
   padding: 0;
   font-family: 'PT Sans', sans-serif;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
 }
 
 .home,
 .services,
-.products,
-.sign-up {
+.register,
+.products {
   display: flex;
   height: 90vh;
   align-items: center;
@@ -34,11 +36,118 @@
   font-size: 100px;
 }
 
-.sign-up {
-  background-image: url('./images2/img-8.jpg');
+.register {
+  background-image: url('./images2/register2.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
   font-size: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(42, 41, 41, 0.3);
+  margin: 30px 100px;
+}
+
+.title {
+  text-align: center;
+  font-size: 50px;
+  font-family: "Bowlby One SC",cursive;
+  padding-top:15px ;
+  letter-spacing: 5px;
+}
+
+
+.description {
+  text-align: center;
+  font-size: 23px;
+  font-family: "Sorts Mill Goudy", sans-serif;
+  margin-bottom: 15px;
+}
+
+
+
+.survey-form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: auto;
+  background-color: rgba(49, 49, 49, 0.6);
+  margin: auto;
+  padding-top: 10px; ;
+
+}
+.name,
+.number,
+.email,
+.dropdown {
+display: flex;
+margin-top: 10px;
+height: 36px;
+width: 70%;
+color: black;
+}
+
+.dropdown {
+  box-sizing: content-box;
+  resize: none;
+  color: black;
+}
+
+.box{
+  display: flex;
+  flex-direction: column;
+  margin-top:10px ;
+  margin-bottom:10px ;
+  margin-left: 40px;
+}
+
+.radiobtn {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+/* .text-area {
+  margin-top: 10px;
+  color: black;
+} */
+
+.submit {
+  background-color:  rgba(49, 49, 49, 0.6);
+  font-size: larger;
+  height: 45px;
+  width: 160px;
+  border-radius: 50px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.submit:hover {
+  background: white;
+  color: rgb(3, 3, 3);
+  cursor: pointer;
+
 }

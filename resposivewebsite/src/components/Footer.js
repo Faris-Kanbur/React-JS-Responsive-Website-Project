@@ -8,7 +8,7 @@ function Footer() {
     <div className='footer-container'>
       <section className='footer-subscription'>
         <p className='footer-subscription-heading'>
-          Join the Adventure newsletter to get best learning materials
+          Join the newsletter to get best learning materials
         </p>
         <p className='footer-subscription-text'>
           You can unsubscribe at any time.
@@ -27,7 +27,7 @@ function Footer() {
               type='email'
               placeholder='Your Email'
             />
-            <Button buttonStyle='btn--outline'>Subscribe</Button>
+            <Button buttonStyle='btn--outline'>Unsubscribe</Button>
           </form>
         </div>
       </section>
