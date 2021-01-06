@@ -22,6 +22,17 @@ function Register() {
                 <input type="email" name="email" className="email" placeholder="enter your Email" required />
             </div>
             <div className="box">
+                <label for="dropdown" className="dropdown-label">Language</label>
+                <select name="content" className="dropdown">
+                    <option value="German" selected>German</option>
+                    <option value="English" >English</option>
+                    <option value="French" >French</option>
+                    <option value="Norwegian" >Norwegian</option>
+                    <option value="Russian" >Russian</option>
+                    <option value="Turkish" >Turkish</option>
+                </select>
+            </div>
+            <div className="box">
                 <label for="dropdown" className="dropdown-label">Language level</label>
                 <select name="content" className="dropdown">
                     <option value="A1 & A2" selected>A1 & A2</option>

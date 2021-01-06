@@ -151,3 +151,17 @@ color: black;
   cursor: pointer;
 
 }
+
+
+
+@media only screen and (max-width: 1024px) {
+  .container {
+    margin-bottom: 2rem;
+    height: 100%;
+    width: 100%;
+  }
+
+  .survey-form {
+    width: 80%;
+  }
+} 
