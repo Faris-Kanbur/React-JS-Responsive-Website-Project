@@ -1,66 +1,131 @@
 import React from 'react';
-import '../../App.css';
-import { Button } from '../Button';
+import Avatar from '@material-ui/core/Avatar';
+import Button from '@material-ui/core/Button';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import TextField from '@material-ui/core/TextField';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import Link from '@material-ui/core/Link';
+import Paper from '@material-ui/core/Paper';
+import Box from '@material-ui/core/Box';
+import Grid from '@material-ui/core/Grid';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
 
-function Register() {
+function Copyright() {
   return (
-    <div className='register'>
-      <div className="container">
-        <h1 className="title">OnePage</h1>
-        <h3 className="description">Thank you for subscript on One Page. Would you like to tell us a little more about yourself?</h3>
-          <form action="result.html" className="survey-form" method="GET" name="form" target="_blank">
-              <div className="box">
-                <label for="name" className="name-label" >Name</label>
-                <input type="text" name="name" className="name" placeholder="enter your name" required />
-              </div>
-              <div className="box">
-                <label for="number" className="number-label">Age</label>
-                <input type="number" name="age" className="number" placeholder="age" min="5" max="99" required />
-            </div>
-            <div className="box">
-                <label for="email" className="email-label">Email</label>
-                <input type="email" name="email" className="email" placeholder="enter your Email" required />
-            </div>
-            <div className="box">
-                <label for="dropdown" className="dropdown-label">Language</label>
-                <select name="content" className="dropdown">
-                    <option value="German" selected>German</option>
-                    <option value="English" >English</option>
-                    <option value="French" >French</option>
-                    <option value="Norwegian" >Norwegian</option>
-                    <option value="Russian" >Russian</option>
-                    <option value="Turkish" >Turkish</option>
-                </select>
-            </div>
-            <div className="box">
-                <label for="dropdown" className="dropdown-label">Language level</label>
-                <select name="content" className="dropdown">
-                    <option value="A1 & A2" selected>A1 & A2</option>
-                    <option value="A2 & B1" >A2 & B1</option>
-                    <option value="B2 & C1" >B2 & C1</option>
-                </select>
-            </div>
-            {/* <div class="box">
-                <label className="checkbox" >How many days you wish to receive an e-mail</label>
-                <label for="first-check"><input type="checkbox" name="Two" className="first-check" value="Comedy" />Two</label>
-                <label for="second-check"><input type="checkbox" name="Three" className="second-check" value="Action" />Three</label>
-                <label for="third-check"><input type="checkbox" name="Four" className="third-check" value="Romance" checked />Four</label>
-            </div> */}
-            <div className="box">
-              <label className="radiobtn">Gender</label>
-              <label><input type="radio" name="gender" value="male" className="first-radio" />Male</label>
-              <label><input type="radio" name="gender" value="female" className="second-radio" checked />Female</label>
-              <label><input type="radio" name="gender" value="other" className="third-radio" />Other</label>
-            </div>
-            {/* <div className="box box-textarea">
-                <label for="feedback" className="feed-label">Feedback</label>
-                <textarea name="message" class="text-area" cols="30" rows="10" className="feedback" placeholder="any comment"></textarea>
-            </div> */}
-          </form>
-          <input type="submit" value="Send" className="submit" />
-      </div>
-    </div>
-  )
+    <Typography variant="body2" color="textSecondary" align="center">
+      {'Copyright © '}
+      <Link color="inherit" href="https://material-ui.com/">
+        Your Website
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
 }
 
-export default Register
+const useStyles = makeStyles((theme) => ({
+  root: {
+    height: '100vh',
+  },
+  image: {
+    backgroundImage: 'url(https://mk0digitallearn7ttjx.kinstacdn.com/wp-content/uploads/2018/01/online-education.jpg)',
+    backgroundRepeat: 'no-repeat',
+    backgroundColor:
+      theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  },
+  paper: {
+    margin: theme.spacing(8, 4),
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.secondary.main,
+  },
+  form: {
+    width: '100%', // Fix IE 11 issue.
+    marginTop: theme.spacing(1),
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
+  },
+}));
+
+export default function SignInSide() {
+  const classes = useStyles();
+
+  return (
+    <Grid container component="main" className={classes.root}>
+      <CssBaseline />
+      <Grid item xs={false} sm={4} md={7} className={classes.image} />
+      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+        <div className={classes.paper}>
+          <Avatar className={classes.avatar}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Sign in
+          </Typography>
+          <form className={classes.form} noValidate>
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              label="Email Address"
+              name="email"
+              autoComplete="email"
+              autoFocus
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+            />
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="Remember me"
+            />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+            >
+              Sign In
+            </Button>
+            <Grid container>
+              <Grid item xs>
+                <Link href="#" variant="body2">
+                  Forgot password?
+                </Link>
+              </Grid>
+              <Grid item>
+                <Link href="#" variant="body2">
+                  {"Don't have an account? Sign Up"}
+                </Link>
+              </Grid>
+            </Grid>
+            <Box mt={5}>
+              <Copyright />
+            </Box>
+          </form>
+        </div>
+      </Grid>
+    </Grid>
+  );
+}
