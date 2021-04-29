@@ -12,6 +12,7 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import GroupedSelect from '../SelectLanguage';
 
 function Copyright() {
   return (
@@ -95,6 +96,8 @@ export default function SignInSide() {
               id="password"
               autoComplete="current-password"
             />
+            
+            <GroupedSelect />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"

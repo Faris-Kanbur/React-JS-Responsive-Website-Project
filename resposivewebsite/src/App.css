@@ -19,12 +19,16 @@
 }
 
 .services {
-  background-image: url('./images2/img-2.jpg');
+  background-image: url('./images2/ourteam.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
   font-size: 100px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  
 }
 
 .products {
@@ -154,6 +158,11 @@ color: black;
 
 
 
+
+
+
+
+
 @media only screen and (max-width: 1024px) {
   .container {
     margin-bottom: 2rem;
@@ -165,3 +174,4 @@ color: black;
     width: 80%;
   }
 } 
+
