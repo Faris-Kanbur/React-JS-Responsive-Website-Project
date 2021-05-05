@@ -7,6 +7,10 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 const useStyles = makeStyles({
   root: {
@@ -41,6 +45,15 @@ export default function MediaCard() {
         </CardContent>
       </CardActionArea>
       <CardActions>
+      <IconButton aria-label="LinkedInIcon">
+          <LinkedInIcon />
+        </IconButton>
+        <IconButton aria-label="InstagramIcon">
+          <InstagramIcon />
+        </IconButton>
+        <IconButton aria-label="share">
+          <GitHubIcon />
+        </IconButton>
         <Button size="small" color="primary">
           Share
         </Button>
