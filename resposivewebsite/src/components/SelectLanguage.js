@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
     minWidth: 120,
-    color: 'f2f2f2'
+    // color: 'f2f2f2'
   },
   
 }));
@@ -22,7 +22,7 @@ export default function GroupedSelect() {
     <div>
       <FormControl className={classes.formControl}>
         <InputLabel htmlFor="grouped-native-select">Language</InputLabel>
-        <Select native defaultValue="" id="grouped-native-select" style={{ backgroundColor: "rgb(232, 241, 250)" }}>
+        <Select native defaultValue="" id="grouped-native-select" >
           <option aria-label="None" value="" />
                 <option value={1}>English</option>
                 <option value={2}>German</option>

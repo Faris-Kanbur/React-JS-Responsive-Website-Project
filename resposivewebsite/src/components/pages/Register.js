@@ -74,6 +74,28 @@ export default function SignInSide() {
             Sign in
           </Typography>
           <form className={classes.form} noValidate>
+          <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="name"
+              label="Name"
+              name="name"
+              autoComplete="name"
+              autoFocus
+            />
+            {/* <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="surname"
+              label="Surname"
+              name="surname"
+              autoComplete="surname"
+              autoFocus
+            /> */}
             <TextField
               variant="outlined"
               margin="normal"
@@ -95,6 +117,17 @@ export default function SignInSide() {
               type="password"
               id="password"
               autoComplete="current-password"
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="age"
+              label="Age"
+              type="age"
+              id="age"
+              autoComplete="current-age"
             />
             
             <GroupedSelect />
