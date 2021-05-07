@@ -10,13 +10,13 @@ function Cards() {
                 <div className="cards__wrapper">
                     <ul className="cards__item">
                         <CardItem 
-                            src="images/img-9.png"
+                            src="images/eng.gif"
                             text="English will open up different opportunities for you."
                             label="English"
                             path="/sevices"
                         />
                         <CardItem 
-                            src="images/img-2.jpg"
+                            src="images/german.gif"
                             text="When analyzed numerically, it ranks second in the world after English in terms of the number of scientific articles prepared in German."
                             label="Deutsch"
                             path="/sevices"
@@ -24,19 +24,19 @@ function Cards() {
                     </ul>
                     <ul className="cards__item">
                         <CardItem 
-                            src="images/img-3.jpg"
+                            src="images/tr.gif"
                             text="It is indisputable that the old Arabic script is impressive with its lines and structure."
                             label="Arabic"
                             path="/sevices"
                         />
                         <CardItem 
-                            src="images/img-4.png"
+                            src="images/tr.gif"
                             text="Russian is a language spoken in a wide geography. Russian, in terms of number of speakers worldwide Chinese, English"
                             label="Russian"
                             path="/sevices"
                         />
                         <CardItem 
-                            src="images/img-18.jpg"
+                            src="images/tr.gif"
                             text="It is estimated that more than 20 thousand words are used and transferred from Turkish to other world languages."
                             label="Türkish"
                             path="/register"
