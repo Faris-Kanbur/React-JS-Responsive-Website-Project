@@ -24,13 +24,13 @@ function Cards() {
                     </ul>
                     <ul className="cards__item">
                         <CardItem 
-                            src="images/tr.gif"
+                            src="images/arap.gif"
                             text="It is indisputable that the old Arabic script is impressive with its lines and structure."
                             label="Arabic"
                             path="/sevices"
                         />
                         <CardItem 
-                            src="images/tr.gif"
+                            src="images/russ.gif"
                             text="Russian is a language spoken in a wide geography. Russian, in terms of number of speakers worldwide Chinese, English"
                             label="Russian"
                             path="/sevices"
