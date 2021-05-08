@@ -8,7 +8,7 @@ function Cards() {
             <h1>Which language do you want to learn ?</h1>
             <div className="cards__container">
                 <div className="cards__wrapper">
-                    <ul className="cards__item">
+                    <ul className="cards__item"> 
                         <CardItem 
                             src="images/eng.gif"
                             text="English will open up different opportunities for you."
@@ -21,7 +21,7 @@ function Cards() {
                             label="Deutsch"
                             path="/sevices"
                         />
-                    </ul>
+                    </ul> 
                     <ul className="cards__item">
                         <CardItem 
                             src="images/arap.gif"

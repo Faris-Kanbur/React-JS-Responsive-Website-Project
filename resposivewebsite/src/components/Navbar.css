@@ -28,6 +28,10 @@
     display: flex;
     align-items: center;
   }
+  .fa-book-reader {
+    font-size: 30px;
+    margin: 3px;
+  }
   
   .fa-typo3 {
     margin-left: 0.5rem;
