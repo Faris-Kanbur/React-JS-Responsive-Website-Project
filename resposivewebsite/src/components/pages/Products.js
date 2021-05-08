@@ -1,6 +1,11 @@
 import React from 'react';
-import '../../App.css';
+// import '../../App.css';
+import Dic from '../dic';
 
 export default function Products() {
-  return <h1 className='products'>Your Suggestions</h1>;
+  return (
+    <>
+        <Dic />
+    </>
+)
 }
