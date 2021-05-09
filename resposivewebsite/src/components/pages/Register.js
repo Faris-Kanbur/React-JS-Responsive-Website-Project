@@ -1,4 +1,8 @@
 import React from 'react';
+import {useFormik} from "formik";
+import * as yup from "yup";
+import { firstname, surname, email, level  } from "../../utils/validation";
+import {getData} from '../../services/getData'
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,7 +16,22 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import GroupedSelect from '../SelectLanguage';
+import Select from '@material-ui/core/Select';
+import FormControl from '@material-ui/core/FormControl';
+import MenuItem from '@material-ui/core/MenuItem';
+import InputLabel from '@material-ui/core/InputLabel';
+import { useHistory } from "react-router-dom";
+
+
+
+const validationSchema = yup.object({
+  firstname,
+  surname,
+  email,
+  level
+});
+
+
 
 function Copyright() {
   return (
@@ -47,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: "black",
   },
   form: {
     width: '100%', // Fix IE 11 issue.
@@ -56,10 +75,46 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+    // color: 'f2f2f2'
+  },
 }));
 
 export default function SignInSide() {
   const classes = useStyles();
+  let history = useHistory();
+  const formik = useFormik({
+    initialValues: {
+      firstname: "",
+      surname: "",
+      email: "",
+      level: ""
+    },
+
+    validationSchema: validationSchema,
+    onSubmit: async (values) => {
+      console.log("values", values);
+      try {
+        const result = await getData(
+          "https://opna.herokuapp.com/subscriber/create/",
+          values
+        );
+        console.log(result?.data);
+        formik.handleReset();
+        history.push("/")
+      } catch ({ response }) {
+        if (response) {
+          console.log(response.data.non_field_errors[0]);
+        } else {
+          console.log("Something went wrong!");
+        }
+      }
+  },
+  })
+
+  
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -71,21 +126,25 @@ export default function SignInSide() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign in
+            Subscribe
           </Typography>
-          <form className={classes.form} noValidate>
+          <form className={classes.form} noValidate onSubmit={formik.handleSubmit}>
           <TextField
               variant="outlined"
               margin="normal"
               required
               fullWidth
-              id="name"
+              id="firstname"
               label="Name"
-              name="name"
-              autoComplete="name"
+              name="firstname"
+              autoComplete="firstname"
               autoFocus
+              value={formik.values.firstname}
+              onChange={formik.handleChange}
+              error={formik.touched.firstname && Boolean(formik.errors.firstname)}
+              helperText={formik.touched.firstname && formik.errors.firstname}
             />
-            {/* <TextField
+            <TextField
               variant="outlined"
               margin="normal"
               required
@@ -95,7 +154,11 @@ export default function SignInSide() {
               name="surname"
               autoComplete="surname"
               autoFocus
-            /> */}
+              value={formik.values.surname}
+              onChange={formik.handleChange}
+              error={formik.touched.surname && Boolean(formik.errors.surname)}
+              helperText={formik.touched.surname && formik.errors.surname}
+            />
             <TextField
               variant="outlined"
               margin="normal"
@@ -106,8 +169,27 @@ export default function SignInSide() {
               name="email"
               autoComplete="email"
               autoFocus
+              value={formik.values.email}
+              onChange={formik.handleChange}
+              error={formik.touched.email && Boolean(formik.errors.email)}
+              helperText={formik.touched.email && formik.errors.email}
             />
-            <TextField
+               {/* <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="level"
+              label="Level"
+              name="level"
+              autoComplete="level"
+              autoFocus
+              value={formik.values.level}
+              onChange={formik.handleChange}
+              error={formik.touched.level && Boolean(formik.errors.level)}
+              helperText={formik.touched.level && formik.errors.level}
+            /> */}
+            {/* <TextField
               variant="outlined"
               margin="normal"
               required
@@ -117,8 +199,8 @@ export default function SignInSide() {
               type="password"
               id="password"
               autoComplete="current-password"
-            />
-            <TextField
+            /> */}
+            {/* <TextField
               variant="outlined"
               margin="normal"
               required
@@ -128,12 +210,33 @@ export default function SignInSide() {
               type="age"
               id="age"
               autoComplete="current-age"
-            />
+            /> */}
             
-            <GroupedSelect />
+            
+            <FormControl  
+            fullWidth 
+            className={classes.formControl}
+            
+            >
+              <InputLabel  htmlFor="grouped-select">Level</InputLabel>
+              <Select defaultValue="" id="level" name="level"
+              value={formik.values.level}
+              onChange={formik.handleChange}
+              error={formik.touched.level && Boolean(formik.errors.level)}
+              helperText={formik.touched.level && formik.errors.level}
+              >
+                
+                <MenuItem value="A1">A1</MenuItem>
+                <MenuItem value="A2">A2</MenuItem>
+                <MenuItem value="B1">B1</MenuItem>
+                <MenuItem value="B2">B2</MenuItem>
+                <MenuItem value="C1">C1</MenuItem>
+              </Select>
+            </FormControl>
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
+              
             />
             <Button
               type="submit"
@@ -141,10 +244,11 @@ export default function SignInSide() {
               variant="contained"
               color="primary"
               className={classes.submit}
+              
             >
-              Sign In
+              Subscribe
             </Button>
-            <Grid container>
+            {/* <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">
                   Forgot password?
@@ -155,7 +259,7 @@ export default function SignInSide() {
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
-            </Grid>
+            </Grid> */}
             <Box mt={5}>
               <Copyright />
             </Box>
