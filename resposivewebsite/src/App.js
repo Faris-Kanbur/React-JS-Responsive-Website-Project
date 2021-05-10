@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Services from './components/pages/Services';
 import Products from './components/pages/Products';
 import Register from './components/pages/Register';
+import Geschichte from './components/pages/Geschichte';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='/services' component={Services} />
           <Route path='/products' component={Products} />
           <Route path='/register' component={Register} />
+          <Route path='/geschichten' component={Geschichte} />
         </Switch>
       </Router>
     </>
