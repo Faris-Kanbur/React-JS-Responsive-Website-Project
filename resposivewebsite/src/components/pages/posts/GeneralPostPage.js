@@ -1,14 +1,13 @@
 import React, {useState, useEffect} from 'react'
-import PostList from '../PostList'
+import PostList from '../../PostList'
 import axios from "axios";
 
-const Geschichte = () => {
+const GeneralPostPage = ({link}) => {
 
 const [nextUrl, setNextUrl] = useState();
 const [postList, setPostList] = useState([]);
-
 const getPostList = async (
-    url = `https://opna.herokuapp.com/api/story/list/`
+    url = `https://opna.herokuapp.com/api/${link}/list/`
   ) => {
     try {
       const result = await axios.get(url);
@@ -41,4 +40,4 @@ const getPostList = async (
     )
 }
 
-export default Geschichte
+export default GeneralPostPage
