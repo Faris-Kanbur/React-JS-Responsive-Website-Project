@@ -3,7 +3,7 @@ import GeneralPostPage from './GeneralPostPage'
 const Dialog = () => {
     return (
         <>
-            <GeneralPostPage link="news" />
+            <GeneralPostPage link="dialog" />
         </>
     )
 }

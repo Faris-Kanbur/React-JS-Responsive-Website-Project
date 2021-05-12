@@ -1,10 +1,10 @@
 import React from 'react'
 import GeneralDetailPage from './GeneralDetailPage'
 
-const DetailedStoryPage = () => {
+const DetailedGeschichtePage = () => {
     return (
         <GeneralDetailPage link="story" />
     )
 }
 
-export default DetailedStoryPage
+export default DetailedGeschichtePage

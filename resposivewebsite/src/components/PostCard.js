@@ -32,7 +32,8 @@ const useStyles = makeStyles({
   },
 });
 
-export default function PostCard({ post }) {
+export default function PostCard(props) {
+  const {post, link} = props
   const {
     image,
     excerpt,
@@ -46,7 +47,7 @@ export default function PostCard({ post }) {
   const classes = useStyles();
   const history = useHistory();
   const openDetails = () => {
-    history.push(`/detail/${slug}`);
+    history.push(`${link}/detail/${slug}`);
   };
   return (
     <Card className={classes.root}>

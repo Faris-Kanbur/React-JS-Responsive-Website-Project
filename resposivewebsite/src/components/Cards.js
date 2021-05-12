@@ -13,7 +13,7 @@ function Cards() {
                             src="images/eng.gif"
                             text="Deutsch lernen indem Sie Geschichten lesen"
                             label="Geschichten"
-                            path="/geschichten"
+                            path="/story"
                         />
                         <CardItem 
                             src="images/german.gif"
@@ -27,19 +27,19 @@ function Cards() {
                             src="images/arap.gif"
                             text="Deutsch lernen indem Sie Nacrichten lesen"
                             label="Nachrichten"
-                            path="/nachrichten"
+                            path="/news"
                         />
                         <CardItem 
                             src="images/russ.gif"
                             text="Deutsch lernen indem Sie Märchen lesen "
                             label="Märchen"
-                            path="/maerchen"
+                            path="/tale"
                         />
                         <CardItem 
                             src="images/tr.gif"
                             text="Deutsch lernen indem Sie Diologe lesen "
                             label="Diologe"
-                            path="/dialoge"
+                            path="/dialog"
                         />
                     </ul>
                 </div>

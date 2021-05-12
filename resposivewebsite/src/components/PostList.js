@@ -24,9 +24,9 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 
-export default function PostList({postList, hasNext, loadMore}) {
+export default function PostList(props) {
   const classes = useStyles();
-
+  const {hasNext, loadMore, postList, link} = props
   return (
     <>
       <Grid container className={classes.root} spacing={5} justify="center">
@@ -35,7 +35,7 @@ export default function PostList({postList, hasNext, loadMore}) {
             {postList
               ? postList.map((item, id) => (
                   <Grid key={id} item>
-                    <PostCard post={item} />
+                    <PostCard post={item} link={link} />
                   </Grid>
                 ))
               : "No data available"}

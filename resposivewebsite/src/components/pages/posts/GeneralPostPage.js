@@ -2,8 +2,8 @@ import React, {useState, useEffect} from 'react'
 import PostList from '../../PostList'
 import axios from "axios";
 
-const GeneralPostPage = ({link}) => {
-
+const GeneralPostPage = (props) => {
+const {link} = props
 const [nextUrl, setNextUrl] = useState();
 const [postList, setPostList] = useState([]);
 const getPostList = async (
@@ -33,6 +33,7 @@ const getPostList = async (
 
     return (
       <PostList
+      link={link}
       hasNext={!!nextUrl}
       loadMore={handleLoadMore}
       postList={postList}

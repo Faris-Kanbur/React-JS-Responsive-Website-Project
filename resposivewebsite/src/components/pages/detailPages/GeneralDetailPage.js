@@ -27,14 +27,16 @@ const useStyles = makeStyles({
     },
   });
 
-const GeneralDetailPage = ({link}) => {
-
+const GeneralDetailPage = (props) => {
+    const {link} = props
+    console.log(link)
     const [postDetail, setPostDetail] = useState([]);
     let { slug } = useParams();
+    console.log(`slug`, slug)
     const classes = useStyles();
 
     const getPostDetail = async (
-        url = `https://opna.herokuapp.com/api/${link}/list/detail/holy-bible-deutsch-anfanger-98d740715f/`
+        url = `https://opna.herokuapp.com/api/${link}/list/detail/${slug}`
       ) => {
         try {
           const result = await axios.get(url);
